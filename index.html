@@ -133,15 +133,17 @@
             <!-- Canvas Container (Square aspect ratio) -->
             <div id="editor-container" class="relative w-full aspect-square bg-gray-100 rounded-xl overflow-hidden shadow-inner group">
                 
-                <!-- Initial Upload Overlay - Shifted upwards using justify-start and pt-24 -->
-                <div id="upload-overlay" class="absolute inset-0 z-20 flex flex-col items-center justify-start pt-24 bg-gray-50/90 backdrop-blur-sm transition-opacity duration-300">
-                    <svg class="w-16 h-16 text-maroon mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
-                    </svg>
-                    <p class="text-gray-700 font-semibold mb-4 px-6 text-center">Upload your photo to join the campaign</p>
-                    <button onclick="document.getElementById('file-upload').click()" class="bg-maroon hover:bg-[#5a1322] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95">
-                        Choose Photo
-                    </button>
+                <!-- Initial Upload Overlay - Tap anywhere to upload, shifted to the very top -->
+                <div id="upload-overlay" onclick="document.getElementById('file-upload').click()" class="absolute inset-0 z-30 flex flex-col items-center justify-start pt-12 sm:pt-16 bg-gray-50/70 backdrop-blur-sm transition-opacity duration-300 cursor-pointer">
+                    <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center transform transition-transform hover:scale-105 border border-maroon/10">
+                        <svg class="w-12 h-12 text-maroon mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                        </svg>
+                        <p class="text-gray-800 font-bold mb-3 px-2 text-center leading-tight">Upload photo</p>
+                        <div class="bg-maroon text-white font-bold py-2.5 px-6 rounded-full shadow-md text-sm">
+                            Choose Photo
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Interactive Elements -->
